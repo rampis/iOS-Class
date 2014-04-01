@@ -17,11 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    self.mylabel.text = @"Jeff";
-    
-    
-    
+	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,8 +26,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)ButtonPress:(id)sender {
-    
-    
-}
 @end

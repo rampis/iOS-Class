@@ -9,9 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-- (IBAction)ButtonPress:(id)sender;
-
-
-
 
 @end
