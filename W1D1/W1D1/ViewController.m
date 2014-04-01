@@ -19,23 +19,28 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated
     
 }
-- (IBAction)Button1:(id)sender {
-self.Label.text = @"B1";
+
+- (IBAction)Button1:(id)sender
+{
+    self.Label.text = @"B1";
 }
-- (IBAction)Button2:(id)sender {
+
+- (IBAction)Button2:(id)sender
+{
  self.Label2.text = self.field.text;
 
 }
 
 - (IBAction)Button3:(id)sender {
-//self.Label3.textColor = [UIColorblueColor];
+self.Label3.textColor = [UIColor blueColor];
     
 }
 
