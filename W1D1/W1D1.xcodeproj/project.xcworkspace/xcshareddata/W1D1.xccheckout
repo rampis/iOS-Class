@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>247FDA2E-37F6-444E-BC18-8B0A4AC1CC49</string>
+	<key>IDESourceControlProjectName</key>
+	<string>W1D1</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2CCBB49E-BA42-4C55-822A-B662EEF1754A</key>
+		<string>https://github.com/rampis/iOS-Class.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>W1D1/W1D1.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2CCBB49E-BA42-4C55-822A-B662EEF1754A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rampis/iOS-Class.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2CCBB49E-BA42-4C55-822A-B662EEF1754A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2CCBB49E-BA42-4C55-822A-B662EEF1754A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS-Class</string>
+		</dict>
+	</array>
+</dict>
+</plist>
