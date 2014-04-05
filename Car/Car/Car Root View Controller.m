@@ -62,10 +62,10 @@
 
     ignition *electric = [[ignition alloc] init];
     electric.frame = CGRectMake(100, 300, 100, 100);
-    [self.view addSubview:electric];
     [electric setTitle:@"Start" forState:UIControlStateNormal];
-
-
+    [electric addTarget:(self) action:@selector (turnIgnition) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:electric];
+    
     Brake *disc = [[Brake alloc] init];
     disc.frame = CGRectMake(250, 300, 40, 60);
     disc.color = [UIColor blueColor];
@@ -80,7 +80,12 @@
      
      }
 
-
+-(void)turnIgnition {
+    
+    
+    NSLog(@"turn Ignition");
+    
+}
 
 
 - (void)didReceiveMemoryWarning

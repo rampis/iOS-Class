@@ -14,13 +14,25 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    //self.window = [[UIWeb alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    TDLTableViewController * rootViewController = [[TDLTableViewController alloc] initWithStyle:UITableViewStylePlain];
+
+    UINavigationController *navController = [[UINavigationController alloc]
+initWithRootViewController:rootViewController];
     
-    TDLTableViewController *tVC =[[TDLTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    
-    self.window.rootViewController = tVC;
-    
+    self.window.rootViewController = navController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+
+    //
+//    TDLTableViewController *tVC =[[TDLTableViewController alloc] initWithStyle:UITableViewStylePlain];
+//    
+//    self.window.rootViewController = tVC;
+//    
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
+   
     return YES;
 }
 

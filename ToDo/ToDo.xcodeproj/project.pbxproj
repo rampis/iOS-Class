@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DC0A171018EDA79800882AD0 /* TDLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0A170F18EDA79800882AD0 /* TDLTableViewCell.m */; };
+		DC0A171418EF332500882AD0 /* GitHubFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0A171318EF332400882AD0 /* GitHubFlow.storyboard */; };
 		DC58558A18EC4AE800880E5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC58558918EC4AE800880E5B /* Foundation.framework */; };
 		DC58558C18EC4AE800880E5B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC58558B18EC4AE800880E5B /* CoreGraphics.framework */; };
 		DC58558E18EC4AE800880E5B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC58558D18EC4AE800880E5B /* UIKit.framework */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		DC0A170E18EDA79800882AD0 /* TDLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLTableViewCell.h; sourceTree = "<group>"; };
 		DC0A170F18EDA79800882AD0 /* TDLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLTableViewCell.m; sourceTree = "<group>"; };
+		DC0A171318EF332400882AD0 /* GitHubFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GitHubFlow.storyboard; sourceTree = "<group>"; };
 		DC58558618EC4AE800880E5B /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC58558918EC4AE800880E5B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DC58558B18EC4AE800880E5B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,6 +135,7 @@
 		DC58557D18EC4AE800880E5B = {
 			isa = PBXGroup;
 			children = (
+				DC0A171318EF332400882AD0 /* GitHubFlow.storyboard */,
 				DC0A171118EDA7EC00882AD0 /* Controller */,
 				DC58558F18EC4AE800880E5B /* ToDo */,
 				DC5855A818EC4AE800880E5B /* ToDoTests */,
@@ -311,6 +314,7 @@
 				DC5855CD18EC8BBA00880E5B /* Ashby.png in Resources */,
 				DC58559418EC4AE800880E5B /* InfoPlist.strings in Resources */,
 				DC5855D118EC8BBA00880E5B /* Jeff.png in Resources */,
+				DC0A171418EF332500882AD0 /* GitHubFlow.storyboard in Resources */,
 				DC5855CE18EC8BBA00880E5B /* Austen.png in Resources */,
 				DC5855DD18EC983200880E5B /* Jon.png in Resources */,
 				DC96C45018ED6D6100911A97 /* Jisha.png in Resources */,
