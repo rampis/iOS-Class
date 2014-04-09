@@ -4,10 +4,10 @@
 //
 //  Created by Jeff King on 4/8/14.
 //  Copyright (c) 2014 Media Mongoose. All rights reserved.
-//
+// comment
 
 #import "TDLTableViewController.h"
-
+#import "MOVE.h"
 #import "TDLTableViewCell.h"
 
 @implementation TDLTableViewController
@@ -15,30 +15,37 @@
 {
 NSMutableArray * listItems;
 UITextField * nameField;
-UINavigationController * navController;
+//UINavigationController * navController;
+NSArray * priorityColors;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self) {
-
-        listItems = [@[@"Workshop App",@"Go to Blogging"] mutableCopy];
+    if (self)
+    {
+        
+priorityColors = @[RED_COLOR, YELLOW_COLOR, BLUE_COLOR, GREEN_COLOR];
+        
+        listItems = [@[
+                      @{
+                          @"name": @"Workshop App",
+                          @"priority" :@3
+                          },
+                      @{@"name":@"Go To Blogging Thing", @"priority" :@2},
+                      @{@"name":@"Learning Objective-C", @"priority" :@1},
+                      @{@"name":@"Finish GitHub Appp", @"priority" :@0}
+                                                         
+                      ]mutableCopy];
     
-    // Do any additional setup after loading the view.
-    
-        self.tableView.contentInset = UIEdgeInsetsMake(50,0,0,0);
+        //self.tableView.contentInset = UIEdgeInsetsMake(50,0,0,0);
         self.tableView.rowHeight = 50;
         self.tableView.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20);
-        
+        self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
         
         UIView * header = [[UIView alloc] initWithFrame:CGRectMake (0,0,320,50)];
         header.backgroundColor = [UIColor whiteColor];
         self.tableView.tableHeaderView = header;
-        
-//        itemField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 160, 40)];
-//        itemField.backgroundColor = [UIColor whiteColor];
-//        [header addSubview:itemField];
         
         nameField = [[UITextField alloc] initWithFrame:CGRectMake(20,20,160,30)];
         nameField.placeholder = @"TO DO ITEMS";
@@ -46,74 +53,61 @@ UINavigationController * navController;
         nameField.textAlignment = NSTextAlignmentLeft;
         nameField.font = [UIFont fontWithName:@"Arial" size:(22)];
         [header addSubview:nameField];
-        
-//       Buttons
-         UIButton * Button1 = [[UIButton alloc]initWithFrame:CGRectMake(200,15,30,30)];
-         Button1.layer.cornerRadius = 15;
-         Button1.backgroundColor = [UIColor redColor];
-         [Button1 addTarget:self action:@selector(Normal) forControlEvents:
-         UIControlEventTouchUpInside];
-         [header addSubview:Button1];
+
+        UIButton * Button1 = [[UIButton alloc]initWithFrame:CGRectMake(200,15,30,30)];
+        Button1.layer.cornerRadius = 15;
+        Button1.backgroundColor = YELLOW_COLOR;
+        [Button1 addTarget:self action:@selector(addNewListItem:) forControlEvents:
+        UIControlEventTouchUpInside];
+        [header addSubview:Button1];
         
         UIButton * Button2 = [[UIButton alloc]initWithFrame:CGRectMake(240,15,30,30)];
         Button2.layer.cornerRadius = 15;
-        Button2.backgroundColor = [UIColor blackColor];
-        [Button2 addTarget:self action:@selector(Moderate) forControlEvents:
-         UIControlEventTouchUpInside];
+        Button2.backgroundColor = BLUE_COLOR;
+        [Button2 addTarget:self action:@selector(addNewListItem:) forControlEvents:
+        UIControlEventTouchUpInside];
         [header addSubview:Button2];
-        
+    
         UIButton * Button3 = [[UIButton alloc]initWithFrame:CGRectMake(280,15,30,30)];
         Button3.layer.cornerRadius = 15;
-        Button3.backgroundColor = [UIColor greenColor];
-        [Button3 addTarget:self action:@selector(Urgent) forControlEvents:
-         UIControlEventTouchUpInside];
+        Button3.backgroundColor = GREEN_COLOR;
+        [Button3 addTarget:self action:@selector(addNewListItem:) forControlEvents:
+        UIControlEventTouchUpInside];
         [header addSubview:Button3];
-        
-}
+    }
+    
+//New Version
+   // UIButton * Button3 = [[UIButton alloc]initWithFrame:CGRectMake(280,15,30,30)];
+    //Button3.layer.cornerRadius = 15;
+    //Button3.backgroundColor = [UIColor greenColor];
+    //[Button3 addTarget:self action:@selector((addNewListItem::) High)forControlEvents:
+    // UIControlEventTouchUpInside];
+    //[header addSubview:Button3];
+    
+//[self.tableView.tableHeaderView addSubview:highButton];
+
     return self;
 }
--(void)Normal
 
+-(void) addNewListItem:(id)sender
 {
-    NSLog(@"Normal");
+
+    UIButton * button = (UIButton *)sender;
+    NSString * name = nameField.text;
+
+    if (![name isEqualToString:@""])
+    {
+        [listItems insertObject:@{@"name":name, @"priority" : @(button.tag)} atIndex: 0];
+    }
+
+    [self.tableView reloadData];
 }
 
--(void)Moderate
-
-{
-    NSLog(@"Moderate");
-}
-
--(void)Urgent
-
-{
-    NSLog(@"Urgent");
-}
-
-//- (void)newItem
-//{
-//    NSString * itemName = itemField.text;
-//    itemField.text = @"";
-//    NSLog(@"%@", itemName);
-//}
-//
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -125,66 +119,75 @@ UINavigationController * navController;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     TDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+        
+        if(cell == nil) cell =[[TDLTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     
-    if (cell == nil) {
-        cell = [[TDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    cell.textLabel.text = listItems[indexPath.row];
+    cell.bgView.backgroundColor = priorityColors [[listItems[indexPath.row][@"priority"] intValue]];
+    cell.nameLabel.text = listItems[indexPath.row][@"name"];
     
-    // Configure the cell...
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeCell:)];
+    swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+    [cell addGestureRecognizer:swipeLeft];
+    
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeCell:)];
+    swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
+    [cell addGestureRecognizer:swipeRight];
+    
+    
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+
 {
-    // Return NO if you do not want the specified item to be editable.
+
+    TDLTableViewCell *cell = (TDLTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    
+    cell.bgView.backgroundColor = priorityColors[0];
+    
+    NSDictionary * updatelistItem = @{
+    @"name" : listItems[indexPath.row][@"name"],
+    @"priority" : @0
+    };
+
+}
+
+-(void)swipeCell:(UISwipeGestureRecognizer *)gesture
+{
+    //NSLog(@"%@",gesture.direction);
+    
+    TDLTableViewCell * cell = (TDLTableViewCell *)gesture.view;
+    
+    switch (gesture.direction)
+    {
+        case 1: //right
+            
+            NSLog(@"swiping right");
+            [MOVE animateView:cell.bgView properties:@{
+                       @"x" : @10,
+                       @"duration" : @0.5
+                       }];
+                                              
+            break;
+        case 2: //left
+            NSLog(@"swiping left");
+            [MOVE animateView:cell.bgView properties:@{@"x" : @-140,@"duration" : @0.5}];
+            [cell showCircleButtons];
+            break;
+        default:
+                  break;
+    }
+}
+
+- (BOOL)prefersStatusBarHidden
+{
     return YES;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
+

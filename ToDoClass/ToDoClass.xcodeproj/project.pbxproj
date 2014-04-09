@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC82C1B818F5D598007E86AA /* MOVE.m in Sources */ = {isa = PBXBuildFile; fileRef = DC82C1B718F5D598007E86AA /* MOVE.m */; };
 		DC90722218F44A7F0025DEF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC90722118F44A7F0025DEF9 /* Foundation.framework */; };
 		DC90722418F44A7F0025DEF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC90722318F44A7F0025DEF9 /* CoreGraphics.framework */; };
 		DC90722618F44A7F0025DEF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC90722518F44A7F0025DEF9 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC82C1B618F5D598007E86AA /* MOVE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVE.h; sourceTree = "<group>"; };
+		DC82C1B718F5D598007E86AA /* MOVE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVE.m; sourceTree = "<group>"; };
 		DC90721E18F44A7F0025DEF9 /* ToDoClass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoClass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC90722118F44A7F0025DEF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DC90722318F44A7F0025DEF9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -83,6 +86,8 @@
 		DC90721518F44A7F0025DEF9 = {
 			isa = PBXGroup;
 			children = (
+				DC82C1B618F5D598007E86AA /* MOVE.h */,
+				DC82C1B718F5D598007E86AA /* MOVE.m */,
 				DC90725418F469060025DEF9 /* Cell */,
 				DC90725318F468DA0025DEF9 /* Control */,
 				DC90722718F44A7F0025DEF9 /* ToDoClass */,
@@ -266,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC82C1B818F5D598007E86AA /* MOVE.m in Sources */,
 				DC90725718F4693E0025DEF9 /* TDLTableViewCell.m in Sources */,
 				DC90725218F44AF50025DEF9 /* TDLTableViewController.m in Sources */,
 				DC90722E18F44A7F0025DEF9 /* main.m in Sources */,
@@ -466,6 +472,7 @@
 				DC90724C18F44A7F0025DEF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC90724D18F44A7F0025DEF9 /* Build configuration list for PBXNativeTarget "ToDoClassTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +481,7 @@
 				DC90724F18F44A7F0025DEF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
