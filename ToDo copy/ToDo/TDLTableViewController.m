@@ -8,7 +8,7 @@
 
 #import "TDLTableViewController.h"
 #import "TDLTableViewCell.h"
-
+#import "TDLGitHubRequest.h"
 
 @implementation TDLTableViewController
 {
@@ -24,39 +24,41 @@
     self = [super initWithStyle:style];
     if (self)
     {
-        listItems =[@[
+
+        
+        // listItems =[@[
                           
-                          @{@"name" : @"Jisha Obukwelu",@"image" : [UIImage imageNamed:@"Jisha"],@"github" : @"https://github.com/Jiobu "
-                            },
-                          @{@"name" : @"Jon Fox",@"image" : [UIImage imageNamed:@"Jon"],@"github" : @"https://github.com/FoxJon "
-                            },
-                          @{@"name" : @"Austen Nolan",@"image" : [UIImage imageNamed:@"Austin"],@"github" : @"https://github.com/adnolan99 "
-                            },
-                          @{@"name" : @"Ali Houshmand",@"image" : [UIImage imageNamed:@"Ali"],@"github" : @"https://github.com/HoushmandA06 "
-                            },
-                          @{@"name" : @"Ed Salter",@"image" : [UIImage imageNamed:@"Ed"],@"github" : @"https://github.com/MadArkitekt "
-                            },
-                          @{@"name" : @"Jeffrey Moulds",@"image" : [UIImage imageNamed:@"Jeffrey"],@"github" :@"https://github.com/jdmgithub "
-                            },
-                          @{@"name" : @"Savitha Reddy",@"image" : [UIImage imageNamed:@"Savitha"],@"github"   :@"https://github.com/savithareddy "
-                            },
-                          @{@"name" : @"Derek Weber",@"image" : [UIImage imageNamed:@"Derek"],@"github" : @"https://github.com/dweber03 "
-                            },
-                          @{@"name" : @"Ashby Ahornwell",@"image" : [UIImage imageNamed:@"Ashby"],@"github" : @"https://github.com/athornwell "
-                            },
-                          @{@"name" : @"Austen Johnson",@"image" : [UIImage imageNamed:@"Austen"],@"github" : @"https://github.com/ajohnson21 "
-                            },
-                          @{@"name" : @"Jeff King",@"image" : [UIImage imageNamed:@"Jeff"],@"github" : @"https://github.com/rampis"
-                            },
-                          @{@"name" : @"Heidi Proske",@"image" : [UIImage imageNamed:@"Heidi"],@"github" : @"https://github.com/justagirlcoding"
-                            },
-                          @{@"name" : @"T.J. Mercer",@"image" : [UIImage imageNamed:@"TJ"],@"github" : @"https://github.com/gwanunig14"
-                            },
-                          @{@"name" : @"Teddy Conyers",@"image" : [UIImage imageNamed:@"Teddy"],@"github" : @"https//github.com/Conyers"
-                            },
-                          @{@"name" : @"John Yam",@"image" : [UIImage imageNamed:@"John"],@"github" : @"https://github.com/yamski"
-                            }
-                          ] mutableCopy];
+//                          @{@"name" : @"Jisha Obukwelu",@"image" : [UIImage imageNamed:@"Jisha"],@"github" : @"https://github.com/Jiobu"
+//                            },
+//                          @{@"name" : @"Jon Fox",@"image" : [UIImage imageNamed:@"Jon"],@"github" : @"https://github.com/FoxJon"
+//                            },
+//                          @{@"name" : @"Austen Nolan",@"image" : [UIImage imageNamed:@"Austin"],@"github" : @"https://github.com/adnolan99"
+//                            },
+//                          @{@"name" : @"Ali Houshmand",@"image" : [UIImage imageNamed:@"Ali"],@"github" : @"https://github.com/HoushmandA06"
+//                            },
+//                          @{@"name" : @"Ed Salter",@"image" : [UIImage imageNamed:@"Ed"],@"github" : @"https://github.com/MadArkitekt"
+//                            },
+//                          @{@"name" : @"Jeffrey Moulds",@"image" : [UIImage imageNamed:@"Jeffrey"],@"github" :@"https://github.com/jdmgithub"
+//                            },
+//                          @{@"name" : @"Savitha Reddy",@"image" : [UIImage imageNamed:@"Savitha"],@"github"   :@"https://github.com/savithareddy"
+//                            },
+//                          @{@"name" : @"Derek Weber",@"image" : [UIImage imageNamed:@"Derek"],@"github" : @"https://github.com/dweber03"
+//                            },
+//                          @{@"name" : @"Ashby Ahornwell",@"image" : [UIImage imageNamed:@"Ashby"],@"github" : @"https://github.com/athornwell"
+//                            },
+//                          @{@"name" : @"Austen Johnson",@"image" : [UIImage imageNamed:@"Austen"],@"github" : @"https://github.com/ajohnson21"
+//                            },
+//                          @{@"name" : @"Jeff King",@"image" : [UIImage imageNamed:@"Jeff"],@"github" : @"https://github.com/rampis"
+//                            },
+//                          @{@"name" : @"Heidi Proske",@"image" : [UIImage imageNamed:@"Heidi"],@"github" : @"https://github.com/justagirlcoding"
+//                            },
+//                          @{@"name" : @"T.J. Mercer",@"image" : [UIImage imageNamed:@"TJ"],@"github" : @"https://github.com/gwanunig14"
+//                            },
+//                          @{@"name" : @"Teddy Conyers",@"image" : [UIImage imageNamed:@"Teddy"],@"github" : @"https://github.com/talented76"
+//                            },
+//                          @{@"name" : @"John Yam",@"image" : [UIImage imageNamed:@"John"],@"github" : @"https://github.com/yamski"
+//                            }
+    
         
         self.tableView.contentInset = UIEdgeInsetsMake(50,0,0,0);
         self.tableView.rowHeight = 100;
@@ -109,10 +111,20 @@
     
     nameField.text = @"";
     
-    [listItems addObject:
-        @{@"name":username,
-          @"github" : [NSString stringWithFormat:@"https://github.com/%@",username]}
-     ];
+// [listItems addObject:
+//   @{@"name":username,
+// @"github" : [NSString stringWithFormat:@"https://github.com/%@",username]}
+//];
+    
+    
+    NSDictionary * userInfo = [TDLGitHubRequest getUserWithUserName: username];
+    
+    if([[userInfo allKeys] count ]== 3) [listItems addObject:userInfo];
+    else NSLog(@"not enough data");
+    
+    
+    //[listItems addObject:userInfo];
+    
     [nameField resignFirstResponder];
     [self.tableView reloadData];
     
@@ -120,6 +132,8 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    [self newUser];
+    
     return YES;
 }
 
@@ -150,21 +164,31 @@
     
     return cell;
 }
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary * listItem = [self getListItem:indexPath.row];
+
+    //  NSLog(@"%@",listItem);
+
+    UIViewController * webController = [[UIViewController alloc] init];
     
-    NSLog(@"%@",listItem);
+    UIWebView * webView = [[UIWebView alloc] init];
+    
+    webController.view = webView;
+    
+    UIWindow * window = UIApplication.sharedApplication.windows.firstObject;
+    UINavigationController * navController = (UINavigationController *)window.rootViewController;
+    
+    [navController pushViewController: webController animated:YES];
+    
+    NSURL * url = [NSURL URLWithString:listItem [@"github"]];
+    NSURLRequest * request = [NSURLRequest requestWithURL:url];
+    [webView loadRequest:request];
 }
-
 - (NSDictionary *)getListItem:(NSInteger)row
-
 {
-    
     NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
     return reverseArray[row];
-    
 }
 
 @end
@@ -182,7 +206,8 @@
  
  - titleHeader.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:30];
  Posted Thursday at 8:11pm
- */
+ 
+*/
 
 
 
