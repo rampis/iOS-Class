@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC90722218F44A7F0025DEF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC90722118F44A7F0025DEF9 /* Foundation.framework */; };
+		DC90722418F44A7F0025DEF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC90722318F44A7F0025DEF9 /* CoreGraphics.framework */; };
+		DC90722618F44A7F0025DEF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC90722518F44A7F0025DEF9 /* UIKit.framework */; };
+		DC90722C18F44A7F0025DEF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC90722A18F44A7F0025DEF9 /* InfoPlist.strings */; };
+		DC90722E18F44A7F0025DEF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC90722D18F44A7F0025DEF9 /* main.m */; };
+		DC90723218F44A7F0025DEF9 /* TDLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC90723118F44A7F0025DEF9 /* TDLAppDelegate.m */; };
+		DC90723418F44A7F0025DEF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC90723318F44A7F0025DEF9 /* Images.xcassets */; };
+		DC90723B18F44A7F0025DEF9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC90723A18F44A7F0025DEF9 /* XCTest.framework */; };
+		DC90723C18F44A7F0025DEF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC90722118F44A7F0025DEF9 /* Foundation.framework */; };
+		DC90723D18F44A7F0025DEF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC90722518F44A7F0025DEF9 /* UIKit.framework */; };
+		DC90724518F44A7F0025DEF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC90724318F44A7F0025DEF9 /* InfoPlist.strings */; };
+		DC90724718F44A7F0025DEF9 /* ToDoClassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC90724618F44A7F0025DEF9 /* ToDoClassTests.m */; };
+		DC90725218F44AF50025DEF9 /* TDLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC90725118F44AF50025DEF9 /* TDLTableViewController.m */; };
+		DC90725718F4693E0025DEF9 /* TDLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC90725618F4693E0025DEF9 /* TDLTableViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC90723E18F44A7F0025DEF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC90721618F44A7F0025DEF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC90721D18F44A7F0025DEF9;
+			remoteInfo = ToDoClass;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DC90721E18F44A7F0025DEF9 /* ToDoClass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoClass.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC90722118F44A7F0025DEF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DC90722318F44A7F0025DEF9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DC90722518F44A7F0025DEF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DC90722918F44A7F0025DEF9 /* ToDoClass-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ToDoClass-Info.plist"; sourceTree = "<group>"; };
+		DC90722B18F44A7F0025DEF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC90722D18F44A7F0025DEF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC90722F18F44A7F0025DEF9 /* ToDoClass-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToDoClass-Prefix.pch"; sourceTree = "<group>"; };
+		DC90723018F44A7F0025DEF9 /* TDLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDLAppDelegate.h; sourceTree = "<group>"; };
+		DC90723118F44A7F0025DEF9 /* TDLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLAppDelegate.m; sourceTree = "<group>"; };
+		DC90723318F44A7F0025DEF9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DC90723918F44A7F0025DEF9 /* ToDoClassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoClassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC90723A18F44A7F0025DEF9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		DC90724218F44A7F0025DEF9 /* ToDoClassTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ToDoClassTests-Info.plist"; sourceTree = "<group>"; };
+		DC90724418F44A7F0025DEF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC90724618F44A7F0025DEF9 /* ToDoClassTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoClassTests.m; sourceTree = "<group>"; };
+		DC90725018F44AF50025DEF9 /* TDLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLTableViewController.h; sourceTree = "<group>"; };
+		DC90725118F44AF50025DEF9 /* TDLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLTableViewController.m; sourceTree = "<group>"; };
+		DC90725518F4693E0025DEF9 /* TDLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLTableViewCell.h; sourceTree = "<group>"; };
+		DC90725618F4693E0025DEF9 /* TDLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLTableViewCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC90721B18F44A7F0025DEF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC90722418F44A7F0025DEF9 /* CoreGraphics.framework in Frameworks */,
+				DC90722618F44A7F0025DEF9 /* UIKit.framework in Frameworks */,
+				DC90722218F44A7F0025DEF9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC90723618F44A7F0025DEF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC90723B18F44A7F0025DEF9 /* XCTest.framework in Frameworks */,
+				DC90723D18F44A7F0025DEF9 /* UIKit.framework in Frameworks */,
+				DC90723C18F44A7F0025DEF9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC90721518F44A7F0025DEF9 = {
+			isa = PBXGroup;
+			children = (
+				DC90725418F469060025DEF9 /* Cell */,
+				DC90725318F468DA0025DEF9 /* Control */,
+				DC90722718F44A7F0025DEF9 /* ToDoClass */,
+				DC90724018F44A7F0025DEF9 /* ToDoClassTests */,
+				DC90722018F44A7F0025DEF9 /* Frameworks */,
+				DC90721F18F44A7F0025DEF9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC90721F18F44A7F0025DEF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC90721E18F44A7F0025DEF9 /* ToDoClass.app */,
+				DC90723918F44A7F0025DEF9 /* ToDoClassTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC90722018F44A7F0025DEF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC90722118F44A7F0025DEF9 /* Foundation.framework */,
+				DC90722318F44A7F0025DEF9 /* CoreGraphics.framework */,
+				DC90722518F44A7F0025DEF9 /* UIKit.framework */,
+				DC90723A18F44A7F0025DEF9 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC90722718F44A7F0025DEF9 /* ToDoClass */ = {
+			isa = PBXGroup;
+			children = (
+				DC90723018F44A7F0025DEF9 /* TDLAppDelegate.h */,
+				DC90723118F44A7F0025DEF9 /* TDLAppDelegate.m */,
+				DC90723318F44A7F0025DEF9 /* Images.xcassets */,
+				DC90722818F44A7F0025DEF9 /* Supporting Files */,
+			);
+			path = ToDoClass;
+			sourceTree = "<group>";
+		};
+		DC90722818F44A7F0025DEF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC90722918F44A7F0025DEF9 /* ToDoClass-Info.plist */,
+				DC90722A18F44A7F0025DEF9 /* InfoPlist.strings */,
+				DC90722D18F44A7F0025DEF9 /* main.m */,
+				DC90722F18F44A7F0025DEF9 /* ToDoClass-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC90724018F44A7F0025DEF9 /* ToDoClassTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC90724618F44A7F0025DEF9 /* ToDoClassTests.m */,
+				DC90724118F44A7F0025DEF9 /* Supporting Files */,
+			);
+			path = ToDoClassTests;
+			sourceTree = "<group>";
+		};
+		DC90724118F44A7F0025DEF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC90724218F44A7F0025DEF9 /* ToDoClassTests-Info.plist */,
+				DC90724318F44A7F0025DEF9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC90725318F468DA0025DEF9 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				DC90725018F44AF50025DEF9 /* TDLTableViewController.h */,
+				DC90725118F44AF50025DEF9 /* TDLTableViewController.m */,
+			);
+			name = Control;
+			sourceTree = "<group>";
+		};
+		DC90725418F469060025DEF9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DC90725518F4693E0025DEF9 /* TDLTableViewCell.h */,
+				DC90725618F4693E0025DEF9 /* TDLTableViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC90721D18F44A7F0025DEF9 /* ToDoClass */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC90724A18F44A7F0025DEF9 /* Build configuration list for PBXNativeTarget "ToDoClass" */;
+			buildPhases = (
+				DC90721A18F44A7F0025DEF9 /* Sources */,
+				DC90721B18F44A7F0025DEF9 /* Frameworks */,
+				DC90721C18F44A7F0025DEF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ToDoClass;
+			productName = ToDoClass;
+			productReference = DC90721E18F44A7F0025DEF9 /* ToDoClass.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC90723818F44A7F0025DEF9 /* ToDoClassTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC90724D18F44A7F0025DEF9 /* Build configuration list for PBXNativeTarget "ToDoClassTests" */;
+			buildPhases = (
+				DC90723518F44A7F0025DEF9 /* Sources */,
+				DC90723618F44A7F0025DEF9 /* Frameworks */,
+				DC90723718F44A7F0025DEF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC90723F18F44A7F0025DEF9 /* PBXTargetDependency */,
+			);
+			name = ToDoClassTests;
+			productName = ToDoClassTests;
+			productReference = DC90723918F44A7F0025DEF9 /* ToDoClassTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC90721618F44A7F0025DEF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TDL;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Media Mongoose";
+				TargetAttributes = {
+					DC90723818F44A7F0025DEF9 = {
+						TestTargetID = DC90721D18F44A7F0025DEF9;
+					};
+				};
+			};
+			buildConfigurationList = DC90721918F44A7F0025DEF9 /* Build configuration list for PBXProject "ToDoClass" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DC90721518F44A7F0025DEF9;
+			productRefGroup = DC90721F18F44A7F0025DEF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC90721D18F44A7F0025DEF9 /* ToDoClass */,
+				DC90723818F44A7F0025DEF9 /* ToDoClassTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC90721C18F44A7F0025DEF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC90722C18F44A7F0025DEF9 /* InfoPlist.strings in Resources */,
+				DC90723418F44A7F0025DEF9 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC90723718F44A7F0025DEF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC90724518F44A7F0025DEF9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC90721A18F44A7F0025DEF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC90725718F4693E0025DEF9 /* TDLTableViewCell.m in Sources */,
+				DC90725218F44AF50025DEF9 /* TDLTableViewController.m in Sources */,
+				DC90722E18F44A7F0025DEF9 /* main.m in Sources */,
+				DC90723218F44A7F0025DEF9 /* TDLAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC90723518F44A7F0025DEF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC90724718F44A7F0025DEF9 /* ToDoClassTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC90723F18F44A7F0025DEF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC90721D18F44A7F0025DEF9 /* ToDoClass */;
+			targetProxy = DC90723E18F44A7F0025DEF9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DC90722A18F44A7F0025DEF9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC90722B18F44A7F0025DEF9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DC90724318F44A7F0025DEF9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC90724418F44A7F0025DEF9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC90724818F44A7F0025DEF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DC90724918F44A7F0025DEF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC90724B18F44A7F0025DEF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ToDoClass/ToDoClass-Prefix.pch";
+				INFOPLIST_FILE = "ToDoClass/ToDoClass-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DC90724C18F44A7F0025DEF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ToDoClass/ToDoClass-Prefix.pch";
+				INFOPLIST_FILE = "ToDoClass/ToDoClass-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DC90724E18F44A7F0025DEF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ToDoClass.app/ToDoClass";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ToDoClass/ToDoClass-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ToDoClassTests/ToDoClassTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		DC90724F18F44A7F0025DEF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ToDoClass.app/ToDoClass";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ToDoClass/ToDoClass-Prefix.pch";
+				INFOPLIST_FILE = "ToDoClassTests/ToDoClassTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC90721918F44A7F0025DEF9 /* Build configuration list for PBXProject "ToDoClass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC90724818F44A7F0025DEF9 /* Debug */,
+				DC90724918F44A7F0025DEF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC90724A18F44A7F0025DEF9 /* Build configuration list for PBXNativeTarget "ToDoClass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC90724B18F44A7F0025DEF9 /* Debug */,
+				DC90724C18F44A7F0025DEF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DC90724D18F44A7F0025DEF9 /* Build configuration list for PBXNativeTarget "ToDoClassTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC90724E18F44A7F0025DEF9 /* Debug */,
+				DC90724F18F44A7F0025DEF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC90721618F44A7F0025DEF9 /* Project object */;
+}
