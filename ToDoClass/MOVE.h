@@ -13,6 +13,7 @@
 @interface MOVE : NSObject
 
 + (void)animateView:(UIView *)obj properties:(NSDictionary *)props;
+
 + (void)animateView:(UIView *)obj properties:(NSDictionary *)props block:(void(^)(id obj))block;
 
 @end
