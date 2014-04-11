@@ -12,6 +12,7 @@
 @implementation TDLTableViewCell
 {
 #pragma mark - globals
+    
     UIButton * Button1;
     UIButton * Button2;
     UIButton * Button3;
@@ -23,12 +24,6 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
-        UIView* bgView2  = [[UIView alloc] initWithFrame:CGRectMake(10, 0, self.frame.size.width-20,40)];
-        bgView2.backgroundColor = [UIColor blackColor];
-        bgView2.layer.cornerRadius = 6;
-        bgView2.alpha = 0.9;
-        [self.contentView addSubview:bgView2];
-        
         self.bgView  = [[UIView alloc] initWithFrame:CGRectMake(10, 0, self.frame.size.width-20,40)];
         self.bgView.backgroundColor = [UIColor blueColor];
         self.bgView.layer.cornerRadius = 6;
@@ -42,7 +37,7 @@
         
         [self.bgView addSubview:self.nameLabel];
         
-#pragma - mark strikethrough
+#pragma - mark strikethrough, circleButton
         
         self.strikeThrough = [[UIView alloc] initWithFrame:CGRectMake(5, 22, self.frame.size.width - 30, 1)];
         
@@ -68,7 +63,7 @@
     //  [self createButtons];
     // }else {
     
-    self.bgView.frame = CGRectMake(5, 22, self.frame.size.width - 30, 1);
+    self.bgView.frame = CGRectMake(10, 0, self.frame.size.width-20,40);
     [Button1 removeFromSuperview];
     [Button2 removeFromSuperview];
     [Button3 removeFromSuperview];

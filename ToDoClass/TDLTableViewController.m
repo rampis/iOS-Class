@@ -22,12 +22,10 @@
     UIButton * Button2;
     UIButton * Button3;
 }
-
-- (id)initWithStyle:(UITableViewStyle)style //*
+- (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self){
-#pragma - mark
         
         priorityColors = @[RED_COLOR, YELLOW_COLOR, BLUE_COLOR, GREEN_COLOR];
         
@@ -82,7 +80,7 @@
     
     return self;
 }
-- (void)deleteItem:(TDLTableViewCell *)cell //*
+- (void)deleteItem:(TDLTableViewCell *)cell
 {
     NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
     
@@ -91,7 +89,7 @@
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
--(void)setItemPriority:(int)priority withItem:(TDLTableViewCell *)cell //*
+-(void)setItemPriority:(int)priority withItem:(TDLTableViewCell *)cell
 {
     NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
     NSDictionary * listItem = listItems[indexPath.row];
@@ -114,7 +112,7 @@
     
     NSLog(@"Priorty : %d", priority);
 }
-- (BOOL)texFieldShouldreturn:(UITextField *) textField //*
+- (BOOL)texFieldShouldreturn:(UITextField *) textField
 {
     NSLog(@"Returned");
     
@@ -124,7 +122,7 @@
 }
 
 
-#pragma - mark
+#pragma - mark UIButton, NSString
 
 -(void) addNewListItem:(id)sender;
 {
@@ -148,13 +146,13 @@
     [self.tableView reloadData];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section //*
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
     return [listItems count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath //*
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
@@ -209,7 +207,7 @@
     
     cell.nameLabel.text = listItems[indexPath.row][@"name"];
     
-#pragma - mark swipe
+#pragma - mark UISswipe
     
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeCell:)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
@@ -224,12 +222,10 @@
 #pragma - mark when touched
 
 //everything happens here when cell is clicked
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath //*
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 
 {
     TDLTableViewCell *cell = (TDLTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
-    
-#pragma - mark set cell backgroundcolors
     
 #pragma - dictionary
     
@@ -307,7 +303,7 @@
     // cell = dictionary
     switch (gesture.direction + completed)
     
-#pragma - mark cases
+#pragma - mark switch cases
     
     switch (gesture.direction + (completed)){
         case 1: //right
