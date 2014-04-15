@@ -11,6 +11,7 @@
 #import "SCGSquare.h"
 
 @implementation SCGStageVC
+
 {
     
     
@@ -23,13 +24,20 @@
     NSMutableDictionary * tappedDots;
     
     NSMutableDictionary * allSquares;
+    
+    UIView * gameBoard;
+    NSArray * gameSizes;
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+//////////////
+//////////
+//////////
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        // Custom initializatio]
+        // Custom initialization
         playerColors = @[BLUE_COLOR,ORANGE_COLOR];
         
         playerTurn = 0;
@@ -37,21 +45,49 @@
         tappedDots = [@{} mutableCopy];
        
         allSquares = [@{}mutableCopy];
+        gameSizes = @[@"4", @"6", @"8"];
+       
+        // gameBoard [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - SCREEN_WIDTH) /2, SCREEN_WIDTH + 50, SCREEN_HEIGHT -SCREEN_WIDTH)];
+        
+        
+        //An Array
+        // gameSizes = @[@"4",@"6",@"8"];
+        //gameBoard
+        
+        //[self.view.layer insertSublayer:gradient atIndex:0];
+        // self.view.backgroundColor = [UIColor clearColor];
+        // self.view addSubview:gameBoard];
         
     }
-   
-    return self;
+        return self;
+//////////////
+//////////////
+//////////////
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    gameSize = 8;
+    //gameSize = [gamesizes[0] intValue];
+    
+    gameSize = 8;//should be [gameSizes[0] intValue];
+    
+    //What goes in here?
+    
+    //UISegmentedControl?
+    
+
+    
+    [self resetGame];
+}
+
+- (void)resetGame
+{
     
     float circleWidth = SCREEN_WIDTH / gameSize;
     float squareWidth = circleWidth /2;
-   
     
     //create squares
     for (int sRow = 0; sRow < gameSize -1; sRow++)
@@ -60,7 +96,7 @@
         {
             float squareX = ((circleWidth - squareWidth) * 1.5) + (circleWidth * sCol);
             float squareY = ((circleWidth - squareWidth) * 1.5) + (circleWidth * sRow) + ((SCREEN_HEIGHT -
-                SCREEN_WIDTH) / 2);
+                                                                                           SCREEN_WIDTH) / 2);
             SCGSquare * square = [[SCGSquare alloc] initWithFrame:CGRectMake (squareX, squareY, squareWidth, squareWidth)];
             square.backgroundColor = [UIColor lightGrayColor];
             
@@ -91,41 +127,8 @@
             [self.view addSubview:circle];
         }
     }
-    
-//    for (float i = 0; i < gameSize * gameSize; i++)
-//    {
-//        NSLog(@"i = %f" ,i);
-//        
-//        float decimal = floor((i / gameSize) * 100) / 100.0;
-//        
-//        int row = floor(decimal);
-//        //floor is a C funtion,i is what circle it is
-//        
-//        int col = ceil( (decimal - floorf(decimal) ) * gameSize);
-//        
-//        // 5/4 = 1.25       1.25-1 = .25    .25 * 4
-//        
-//        NSLog(@"i /gameSize = %f",i /gameSize);
-//        
-//        NSLog(@"i : %f --- row : %d --- col : %d",i,row,col);
-//        
-//        /////////////////////////////////
-//        ////////////////////////////////
-//        ////////////////////////////////
-//        
-//        
-//        float circleX = circleWidth * col;
-//        float circleY = (circleWidth * row) + ((SCREEN_HEIGHT - SCREEN_WIDTH) / 2);
-//        
-//        SCGCircle * circle = [[SCGCircle alloc] initWithFrame:CGRectMake(circleX, circleY,circleWidth,circleWidth)];
-//        circle.position = (CGPoint) {col,row};
-//        circle.delegate = self;
-//        
-//        NSString * key = [NSString stringWithFormat:@"c%dr%d",col,row];
-//        
-//        tappedDots[key] = @2;
-//        
-//        [self.view addSubview:circle]//
+
+
 }
 
 - (UIColor *) circleTappedWithPosition:(CGPoint)position
@@ -148,21 +151,20 @@
 
 -(void)checkForSquareAroundPosition:(CGPoint)position
 {
-    
-    
-    
     int pX = position.x;
     int pY = position.y;
     
-    //  x - col and y = row
+//  x - col and y = row
     BOOL above = (pY > 0);
     BOOL below = (pY < gameSize - 1);
     BOOL left = (pX > 0);
     BOOL right = (pX < gameSize - 1);
     
-    if (above && left)//Came from HipChat
+    if (above && left)
+
+//Came from HipChat
     {
-        //check top left quadrant
+//check top left quadrant
         
         for (UIColor * color in playerColors) //playercolors array loop get the color value
         {
@@ -197,7 +199,7 @@
             }
             
         }
-        //end Hip Chat copy
+//end Hip Chat copy
         
 //        NSString * topLef
 

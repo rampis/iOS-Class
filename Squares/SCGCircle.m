@@ -11,6 +11,7 @@
 @implementation SCGCircle
 {
     UIColor * dotColor;
+    float dotWidth;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -43,9 +44,13 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-     dotColor = [self.delegate circleTappedWithPosition:self.position];
+    dotColor = [self.delegate circleTappedWithPosition:self.position];
+   // dotWidth = frame.size.width / 5;
+   // return self;
     
-    [self setNeedsDisplay];
+   [self setNeedsDisplay];
 }
+
+
 
 @end
