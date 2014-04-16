@@ -18,27 +18,32 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
+// Custom initialization
     
-        self.view.backgroundColor = [UIColor yellowColor];
+        self.view.backgroundColor = [UIColor redColor];
         
         UIView *box = [[UIView alloc] initWithFrame:CGRectMake(20, 10, 100, 100)];
         
         box.backgroundColor = [UIColor blueColor];
         
-//        [self.view addSubview:box];
-    }
+//[self.view addSubview:box];
+
+            }
     
     return self;
 }
 
 - (void)viewDidLoad
+
 {
+    
 //////////////
 /////////////
 //////////////
     
     [super viewDidLoad];
+
 // Do any additional setup after loading the view.
 /////////////
 /////////
@@ -49,18 +54,36 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+    
+// Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+
+//button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//[button addTarget:self
+//action:@selector(aMethod:)
+//forControlEvents:UIControlEventTouchDown];
+//[button setTitle:@"Show View" forState:UIControlStateNormal];
+//button.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
+//[view addSubview:button];
+
+
+//buttonName.titleLabel.font = [UIFont fontWithName:@"LuzSans-Book" size:15];
+//buttonName.tintColor = [UIColor purpleColor];
+//[buttonName setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal]
+
+
+
+
+
+
+
+
+
+
+
 
 @end
