@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MMAStageLines : UIView
+#import "MMAStageScribble.h"
+@interface MMAStageLines : MMAStageScribble
 
 @end

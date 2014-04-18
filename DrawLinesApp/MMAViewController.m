@@ -12,65 +12,60 @@
 
 @implementation MMAViewController
 {
-    MMAStageScribble * scribbleview;
+    MMAStageScribble * scribbleView;
     UIView *colorDrawer;
+    
+    
+    float lineWidth;
+    UIColor *lineColor;
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    
-       // self.view = [[MMAStageLines alloc]initWithFrame:self.view.frame];
-//        self.view = [[MMAStageScribble alloc] initWithFrame:self.view.frame];
-    
-    }
+    if (self)
+    {   // Custom initialization
+        
+            }
     return self;
-
-
-    ////    Choose scribbles or lines
-    ////1.  add properties to UIView,
-    ////2.  int =line width,
-    ////3.  line color, in viewcontroller
-    ////4.   ad subview and slider control,
-    ////5.   and three UI Buttons,
-    ////6.   slider should change width line change color on uiview.
-    ////7.   run set needs display
-    ////     need to change self
-
+    
 }
-//need color buttons here
-//-(void)colorButtonClicked:(id)sender
-
-//NSLog(@)
-
-//need to add line to update scribble
-//[self.view setLineColor:sender.backgroundColor];
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    scribbleview =  [[MMAStageScribble alloc] initWithFrame:self.view.frame];
     
-    [self.view addSubview:scribbleview];
+    lineColor = [UIColor colorWithRed:0.251f green:0.251f blue:0.251f alpha:1.0f];
+    lineWidth = 5.0;
     
-    // Do any additional setup after loading the view.
-
+       [self toggleStage];
+    
+    [self.view addSubview:scribbleView];
+    
+    //
+    // Slider
+    //
     UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT - 43,200,23)];
-    
-    
     slider.minimumValue = 2.0;
     slider.maximumValue = 20.0;
+    slider.value = lineWidth;
+    ///
+    ///Jo Code here
+    ///
+    ///slider.transform = CGAffineTransformMakeRotation(-90 * M_PI / 180);
+    ///slider.frame = CGRectMake(SCREEN_WIDTH - 43, SCREEN_HEIGHT - 300, 23, 280);
+    ///
+    ///End Jo code
+    ///
     
     [slider addTarget:self action:@selector(changeSize:) forControlEvents:UIControlEventAllEvents];
-    
     [self.view addSubview:slider];
-
-
+    
+    //
+    // Color drawer with color buttons
+    //
     colorDrawer = [[UIView alloc] initWithFrame:CGRectMake (0, 0, SCREEN_WIDTH, 40)];
-
+    
     NSArray * colors = @[
                          [UIColor colorWithRed:0.251f green:0.251f blue:0.251f alpha:1.0f],
                          [UIColor colorWithRed:0.008f green:0.353f blue:0.431f alpha:1.0f],
@@ -83,33 +78,96 @@
     
     for (UIColor * color in colors)
     {
-         int index = [colors indexOfObject:color];
-         
-    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(buttonWidth * index, 0, buttonWidth, 40)];
-    button.backgroundColor = color;
-    [button addTarget:self action:@selector(changeColor:) forControlEvents:UIControlEventTouchUpInside];
-      
-    [colorDrawer addSubview:button];
+        //cast NSUInteger object to a primitive type integer
+        int index = (int)[colors indexOfObject:color];
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(buttonWidth*
+                                                                       index, 0,buttonWidth, 40)];
+        button.backgroundColor = color;
+        ///
+        ///set round in here UIButton Layer.corner radius
+        ///
+        [button addTarget:self action:@selector(changeColor:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [colorDrawer addSubview:button];
     }
     
-        [self.view addSubview:colorDrawer];
+    [self.view addSubview:colorDrawer];
     
+    //
+    // Toggle stage button
+    //
+    UIButton* toggleButton = [[UIButton alloc] initWithFrame:CGRectMake(10,50,50,50)];
+    toggleButton.backgroundColor = [UIColor orangeColor];
+    [toggleButton addTarget:self action:@selector(toggleStage) forControlEvents:
+     UIControlEventTouchUpInside];
+    [self.view addSubview:toggleButton];
+    
+    //
+    // Clear stage button
+    //
+    UIButton* clearButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-120,50,50,50)];
+    clearButton.backgroundColor = [UIColor redColor];
+    [clearButton addTarget:self action:@selector(clearStage) forControlEvents:
+     UIControlEventTouchUpInside];
+    [self.view addSubview:clearButton];
+    
+    //
+    // Undo button
+    //
+    UIButton* undoButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-60,50,50,50)];
+    undoButton.backgroundColor = [UIColor orangeColor];
+    [undoButton addTarget:self action:@selector(undoStage) forControlEvents:
+     UIControlEventTouchUpInside];
+    [self.view addSubview:undoButton];
+}
+
+-(void)undoStage
+{
+    [scribbleView undoStage];
+}
+
+-(void)clearStage
+{
+    [scribbleView clearStage];
+}
+
+-(void)toggleStage
+{
+    NSMutableArray * lines =  scribbleView.lines;
+    
+    
+    
+    [scribbleView removeFromSuperview];
+    
+    if ([scribbleView isMemberOfClass:[MMAStageLines class]])
+    {
+        scribbleView = [[MMAStageScribble alloc]initWithFrame:self.view.frame];
+    } else {
+           
+        scribbleView = [[MMAStageLines alloc]initWithFrame:self.view.frame];
+    }
+    scribbleView.lineWidth = lineWidth;
+    scribbleView.lineColor = lineColor;
+    
+    if(lines != nil) scribbleView.lines = lines;
+   
+    
+    [self.view insertSubview:scribbleView atIndex:0];
 }
 
 -(void)changeSize:(UISlider *)sender
 {
-   scribbleview.lineWidth = sender.value;
+    lineWidth = sender.value;
+    scribbleView.lineWidth = lineWidth;
 }
--(void)changeColor:(UIButton *)sender
+-(void)changeColor:(UIButton*)sender
 {
-    scribbleview.lineColor = sender.backgroundColor;
+    //
+    // could put two in one line, see below
+    // lineColor = sender.backgroundColor;
+    scribbleView.lineColor = lineColor = sender.backgroundColor;
 }
-    
-//-(void)changeSize:(UISlider *)sender
-   // scribbleView.lineWidth - sender.value];
-    
-
 
 -(BOOL)prefersStatusBarHidden { return YES;}
-    
+
 @end
